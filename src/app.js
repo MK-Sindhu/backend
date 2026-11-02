@@ -14,4 +14,13 @@ app.use(express.urlencoded({exptended: true, limit: "16kb"}))
 app.use(express.static("public")) // to store public assets like images, pdfs, etc
 app.use(cookieParser())
 
+
+// routes import 
+import userRouter from "./routes/user.routes.js"
+
+// routes declaration
+app.use("/api/v1/users", userRouter)
+
+// https://localhost:<>/api/vi/users/<>
+
 export { app }
